@@ -1,7 +1,8 @@
 interface Person {
-  name: string
+  name: string;
 }
-const people = ['alice', 'bob', 'jan'].map(name => ({} as Person))
+const people = ["alice", "bob", "jan"].map((name) => ({} as Person));
 // No error
 
-export default {}
+console.log(people);
+// export default {};
