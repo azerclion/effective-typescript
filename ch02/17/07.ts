@@ -1,30 +1,38 @@
-function parseTaggedText(lines: string[]): string[][] {
-  const currPara: readonly string[] = []
-  const paragraphs: string[][] = []
+const str = `
+    Frankenstein; or, The Modern Prometheus
+    by Mary Shelley
+
+    You will rejoice to hear that no disaster has accompanied the commencement
+    of an enterprise which you have regarded with such evil forebodings. I arrived
+    here yesterday, and my first task is to assure my dear sister of my welfare and
+    increasing confidence in the success of my undertaking.
+
+    I am already far north of London, and as I walk in the streets of Petersburgh,
+    I feel a cold northern breeze play upon my cheeks, which braces my nerves and
+    fills me with delight.
+`;
+
+function parseTaggedText(lines: string[]): (readonly string[])[] {
+  let currPara: readonly string[] = [];
+  const paragraphs: (readonly string[])[] = [];
 
   const addParagraph = () => {
     if (currPara.length) {
-      paragraphs.push(
-        currPara,
-        // ~~~~~~~~ Type 'readonly string[]' is 'readonly' and
-        //          cannot be assigned to the mutable type 'string[]'
-      )
-      currPara.length = 0 // Clear lines
-      // ~~~~~~ Cannot assign to 'length' because it is a read-only
-      // property
+      paragraphs.push(currPara);
+      currPara = []; // Clear lines
     }
-  }
+  };
 
   for (const line of lines) {
     if (!line) {
-      addParagraph()
+      addParagraph();
     } else {
-      currPara.push(line)
-      // ~~~~ Property 'push' does not exist on type 'readonly string[]'
+      currPara = currPara.concat(line);
     }
   }
-  addParagraph()
-  return paragraphs
+  addParagraph();
+  return paragraphs;
 }
+console.log(parseTaggedText(str.split(`\n`)));
 
-export default {}
+// export default {}
