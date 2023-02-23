@@ -1,13 +1,18 @@
 interface Identified {
-  id: string
+  id: string;
 }
 interface Person {
-  name: string
+  name: string;
 }
 interface Lifespan {
-  birth: Date
-  death?: Date
+  birth: Date;
+  death?: Date;
 }
-type PersonSpan = Person & Lifespan
+type PersonSpan = Person & Lifespan; // && 각각 1개씩이 포함되어 있어야..
 
-export default {}
+const a: PersonSpan = {
+  name: "alice",
+  birth: new Date(),
+};
+
+export default {};

@@ -1,14 +1,18 @@
 interface Identified {
-  id: string
+  id: string;
 }
 interface Person {
-  name: string
+  name: string;
 }
 interface Lifespan {
-  birth: Date
-  death?: Date
+  birth: Date;
+  death?: Date;
 }
-type PersonSpan = Person & Lifespan
-type K = keyof (Person | Lifespan) // Type is never
+type PersonSpan = Person & Lifespan;
+type K = keyof (Person | Lifespan); // Type is never
 
-export default {}
+type KK = Person | Lifespan;
+const aa: KK = {
+  name: "name",
+};
+export default {};
