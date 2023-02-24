@@ -3,11 +3,11 @@ const checkedFetch: typeof fetch = async (input, init) => {
   //                     is not assignable to type 'Promise<Response>'
   //                   Type 'Response | HTTPError' is not assignable
   //                       to type 'Response'
-  const response = await fetch(input, init)
+  const response = await fetch(input, init);
   if (!response.ok) {
-    return new Error('Request failed: ' + response.status)
+    return new Error("Request failed: " + response.status);
   }
-  return response
-}
+  return response;
+};
 
-export default {}
+export default {};
