@@ -1,4 +1,4 @@
-function arraySum(arr: number[]) {
+function arraySum1(arr: number[]) {
   let sum = 0,
     num;
   while ((num = arr.pop()) !== undefined) {
@@ -6,13 +6,13 @@ function arraySum(arr: number[]) {
   }
   return sum;
 }
-function printTriangles(n: number) {
+function printTriangles1(n: number) {
   const nums = [];
   for (let i = 0; i < n; i++) {
     nums.push(i);
-    console.log(arraySum(nums));
+    console.log(arraySum1(nums));
   }
 }
-printTriangles(5);
+printTriangles1(5);
 
 // export default {}

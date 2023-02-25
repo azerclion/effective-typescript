@@ -12,7 +12,7 @@ const strr = `
     fills me with delight.
 `;
 
-function parseTaggedText(lines: string[]): string[][] {
+function parseTaggedTextz(lines: string[]): string[][] {
   const paragraphs: string[][] = [];
   const currPara: string[] = [];
 
@@ -34,6 +34,6 @@ function parseTaggedText(lines: string[]): string[][] {
   return paragraphs;
 }
 
-console.log(parseTaggedText(strr.split(`\n`)));
+console.log(parseTaggedTextz(strr.split(`\n`)));
 
 // export default {};
