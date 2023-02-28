@@ -1,11 +1,14 @@
 interface Vector3 {
-  x: number
-  y: number
-  z: number
+  x: number;
+  y: number;
+  z: number;
 }
-function getComponent(vector: Vector3, axis: 'x' | 'y' | 'z') {
-  return vector[axis]
+function getComponent(vector: Vector3, axis: "x" | "y" | "z") {
+  return vector[axis];
 }
-const mixed = ['x', 1]
+type Fifi = Pick<Vector3, "x" | "y" | "z">;
+const mmkk: Fifi = { x: 1, y: 2, z: 3 };
 
-export default {}
+const mixed = ["x", 1];
+
+export default {};
