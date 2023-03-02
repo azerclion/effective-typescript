@@ -30,9 +30,13 @@ function parseTaggedText(lines: string[]): (readonly string[])[] {
       currPara = currPara.concat(line);
     }
   }
+
   addParagraph();
   return paragraphs;
 }
+
+console.log(str);
+console.log(str.split(`\n`));
 console.log(parseTaggedText(str.split(`\n`)));
 
 // export default {}

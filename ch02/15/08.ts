@@ -22,6 +22,7 @@ function safeParseCSV(
 ): { [columnName: string]: string | undefined }[] {
   return parseCSV(input);
 }
+
 interface Row1 {
   [column: string]: number;
 } // Too broad
